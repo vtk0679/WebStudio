@@ -1,0 +1,16 @@
+.title {
+  margin-bottom: 30px;
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.18;
+  text-align: center;
+
+  color: var(--title-text-color);
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+    font-size: 36px;
+    line-height: 1.17;
+  }
+}

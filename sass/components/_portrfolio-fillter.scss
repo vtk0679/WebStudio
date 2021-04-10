@@ -1,0 +1,64 @@
+.filter {
+  @extend %list;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.filter__item {
+  @media screen and (max-width: 767px) {
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 15px;
+    }
+  }
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.filter__label {
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 22px;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.63;
+  letter-spacing: inherit;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  transition: background-color 250ms var(--main-animation),
+    color 250ms var(--main-animation), box-shadow 250ms var(--main-animation);
+
+  background-color: var(--background-light);
+  color: var(--title-text-color);
+
+  &:focus,
+  &:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--accent-color);
+    color: var(--primary-white-color);
+  }
+
+  .filter__input:checked + & {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--accent-color);
+    color: var(--primary-white-color);
+  }
+
+  .filter__input:focus + & {
+    border: 1px solid black;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 3.4vw;
+  }
+}

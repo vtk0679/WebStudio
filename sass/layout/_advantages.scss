@@ -1,0 +1,66 @@
+.advantages {
+  @extend %section;
+  @extend .container;
+
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 47px;
+  }
+}
+
+.advantages__list {
+  @extend %list;
+  @media screen and (min-width: 767px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--items-set-gap));
+    margin-top: calc(-1 * var(--items-set-gap));
+  }
+}
+
+.advantages__card-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+
+  background-color: var(--background-light);
+}
+
+.advantages__item {
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 767px) {
+    flex-basis: calc(100% / 2 - var(--items-set-gap));
+    margin-left: var(--items-set-gap);
+    margin-top: var(--items-set-gap);
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc(100% / 4 - var(--items-set-gap));
+  }
+}
+
+.advantages__title {
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.14;
+
+  color: var(--title-text-color);
+
+  @media screen and (max-width: 479px) {
+    text-align: center;
+  }
+}
+
+.advantages__message {
+  font-size: 14px;
+  line-height: 1.71;
+}
