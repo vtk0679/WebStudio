@@ -3,6 +3,10 @@ body {
   font-weight: var(--main-font-weight);
   letter-spacing: var(--main-letter-spacing);
   color: var(--primary-text-color);
+
+  @media screen and (max-width: 300px) {
+    width: 300px;
+  }
 }
 
 h1,
