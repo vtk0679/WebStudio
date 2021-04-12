@@ -11,14 +11,21 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: translateX(101%);
+
+  transition: transform 250ms var(--main-animation),
+    visibility 1ms var(--main-animation) 250ms, opacity 1ms var(--main-animation) 250ms;
 
   background-color: var(--primary-white-color);
 
   &.is-open {
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     z-index: 10;
+    transition: transform 250ms var(--main-animation) 1ms,
+      visibility 1ms var(--main-animation), opacity 1ms var(--main-animation);
   }
 
   @media screen and (max-width: 300px) {
