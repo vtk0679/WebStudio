@@ -4,7 +4,6 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   width: 97vw;
-  max-width: 450px;
   height: 609px;
   border-radius: 4px;
   padding: 40px;
@@ -14,6 +13,10 @@
 
   .backdrop.is-hidden & {
     transform: translate(-50%, -50%) scale(1.5);
+  }
+
+  @media screen and (max-width: 1199px) {
+    max-width: 450px;
   }
 
   @media screen and (max-width: 479px) {

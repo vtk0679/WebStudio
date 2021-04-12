@@ -1,0 +1,151 @@
+.mobile-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  background-color: var(--primary-white-color);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 10;
+  }
+
+  @media screen and (max-width: 300px) {
+    width: 300px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-menu__button-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  right: 15px;
+  border: none;
+
+  background-color: transparent;
+  color: var(--main-black-color);
+
+  transition: color 250ms var(--main-animation);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.mobile-menu__close-svg {
+  @extend %svg;
+}
+
+.mobile-menu__list {
+  @extend %list;
+}
+
+.mobile-menu__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.mobile-menu__link {
+  @extend %link;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+
+  color: var(--title-text-color);
+  transition: color 250ms var(--main-animation);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.mobile-menu__phone {
+  @extend %link;
+  display: block;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  margin-bottom: 32px;
+
+  color: var(--accent-color);
+
+  @media screen and (max-width: 380px) {
+    font-size: 8.5vw;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 24px;
+  }
+}
+
+.mobile-menu__mail {
+  @extend %link;
+  display: block;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  margin-bottom: 64px;
+
+  color: var(--primary-text-color);
+}
+
+.mobile-menu__social-list {
+  @extend %list;
+  display: flex;
+}
+
+.mobile-menu__social-item {
+  &:not(:last-child) {
+    padding-right: 10px;
+    border-right: var(--border-modal-inputs);
+
+    @media screen and (max-width: 450px) {
+      padding-right: 2vw;
+    }
+  }
+  &:not(:first-child) {
+    padding-left: 10px;
+
+    @media screen and (max-width: 450px) {
+      padding-left: 2vw;
+    }
+  }
+}
+
+.mobile-menu__social-link {
+  @extend %link;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+
+  color: var(--accent-color);
+
+  @media screen and (max-width: 450px) {
+    font-size: 4vw;
+  }
+}
